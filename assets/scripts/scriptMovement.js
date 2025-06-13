@@ -11,41 +11,35 @@ window.addEventListener('DOMContentLoaded', function() {
         let playerBound = player.getBoundingClientRect();
         parent.style.width = playerBound.width * 5 + 'px';
         parent.style.height = playerBound.height * 5 + 'px';
-        let parentBound = player.parentElement.getBoundingClientRect();
 
-
-        //console.log("parent bound: ", parentBound);
-        function inBounds() {
-            // will check if the position of the player is
-            // within the bounds of the parent
-            // console.log(playerBound - parentBound);
-            position = parentBound.top - playerBound.top;
-            //console.log("Position: ", position);
-        }
         function updatePosition() {
             if (keys['ArrowUp']) {
-                if (playerBound.top < parentBound.top) 
-                    pos.y = parentBound.top; // 'clamping'
-                else 
+                if ( pos.y <= parent.clientTop) {
+                    pos.y = parent.clientTop;
+                } else {
                     pos.y -= speed;
+                }
             }
             else if (keys['ArrowDown']) {
-                if (playerBound.bottom > parentBound.bottom) 
-                    pos.y = parentBound.bottom - playerBound.height;
-                else 
+                if ( pos.y >= (parent.clientHeight - player.clientHeight) ) {
+                    pos.y = parent.clientHeight - player.clientHeight;
+                } else {
                     pos.y += speed;
+                }
             }
             else if (keys['ArrowLeft']) {
-                if (playerBound.left < parentBound.left) 
-                    pos.x = parentBound.left;
-                else 
+                if ( pos.x <= parent.clientLeft) {
+                    pos.x = parent.clientLeft;
+                } else {
                     pos.x -= speed;
+                }
             }
             else if (keys['ArrowRight']) {
-                if (playerBound.right > parentBound.right)
-                    pos.x = parentBound.right - playerBound.width;
-                else 
+                if ( pos.x >= (parent.clientWidth - player.clientWidth)) {
+                    pos.x = parent.clientWidth - player.clientWidth;
+                } else {
                     pos.x += speed;
+                }
             }
 
             player.style.left = pos.x + 'px';
@@ -56,7 +50,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
         document.addEventListener('keydown', function(e) {
             keys[e.key] = true;
-            inBounds();
             //let leftBound = player.getBoundingClientRect().left;
             //let bottomBound = window.innerHeight - player.getBoundingClientRect().bottom;
             //let rightBound = window.innerWidth - player.getBoundingClientRect().right;
