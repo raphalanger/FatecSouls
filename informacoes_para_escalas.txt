@@ -1,0 +1,21 @@
+físico = força + destreza
+fogo = força + fé
+mágico = inteligência + fé
+loucura = destreza + sorte
+
+exibir no mini-display o dano base e
+a escala dos campos com base nos 
+status de cada classe
+(fazer nova tabela para as 
+escalas de todos os atributos)
+
+talvez adicionar vídeos in-game para as batalhas?
+
+S = 0.30 a 0.25
+A = 0.20 a 0.15
+B = 0.15 a 0.10
+C = 0.10 a 0.05
+D = 0.05 a 0.01
+E = 0.0
+
+query para obter escala com base na classe:

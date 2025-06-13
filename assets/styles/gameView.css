@@ -1,0 +1,26 @@
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.player {
+    position: absolute;
+    background-color: aqua;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player p {
+    color: black;
+    font-family: 'Optimus Princeps';
+}
+.player-area {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    display: flex;
+}
