@@ -6,8 +6,16 @@ html {
     left: 0px;
 }
 body {
+    width: 100%;
+    height: 100%;
     top: 0;
+    margin: 0;
+    padding: 0;
     left: 0;
+}
+main {
+    width: 100%;
+    height: 100%;
 }
 .player {
     position: absolute;
@@ -25,12 +33,91 @@ body {
     font-family: 'Optimus Princeps';
 }
 .player-area {
+    background-color: black;
     width: 100%;
     height: 100%;
-    background-color: black;
     top: 0;
     left: 0;
     padding: 0;
     margin: 0;
     display: flex;
+}
+.header-label {
+    width: 100%;
+    height: 100px;
+    background-image: url('../backgrounds/darksouls.jpg');
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 0px;
+}
+.header-label a {
+    margin-right: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Optimus Princeps';
+}
+.horizontal-display {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.game-area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.char-status {
+    flex: 1 1 0;
+    min-width: 0px;
+    background-color: green;
+}
+.oponent-status {
+    flex: 1 1 0;
+    min-width: 0px;
+    background-color: rgb(27, 27, 27);
+    background-image: url('../backgrounds/input_background.jpeg');
+    filter: brightness(60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.boss-frame {
+    position: relative;
+    width: 220px; /* Match the frame image size */
+    height: 220px;
+    background-image: url('../backgrounds/frame.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove padding to avoid offset */
+    box-sizing: border-box;
+    overflow: hidden; /* Hide overflow for a clean frame */
+}
+
+.boss-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;   /* Slightly smaller than frame for padding */
+    height: 180px;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%; /* Optional: for a circular portrait */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Optional: for effect */
+}
+.boss-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

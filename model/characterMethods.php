@@ -130,5 +130,29 @@
                 return $img['caminho'];
             }
         }
+        public function getSpecificChar($id) {
+            $sql = "SELECT * FROM personagens WHERE id_personagem = :idChar";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":idChar", $id);
+            if ($stmt->execute())
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        public function getSpecificBoss($id) {
+            $sql = "SELECT * FROM chefes WHERE id_chefe = :idBoss";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":idBoss", $id);
+            if ($stmt->execute()) {
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+        }
+        public function getWeapon($id) {
+            $sql = "SELECT * FROM armas WHERE id_arma = :idWeapon";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":idWeapon", $id);
+            if ($stmt->execute()) {
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+        }
+        
     }
 ?>
