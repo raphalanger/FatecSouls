@@ -42,16 +42,6 @@ INSERT INTO `escalas` (`id_escala`, `tipo_arma`, `escala_rank`, `tipo_dano`, `fo
 (11, 'Martelo Grande', 'E', 'dano_mag', 0, 0, 0, 0, 0),
 (12, 'Martelo Grande', 'E', 'dano_louc', 0, 0, 0, 0, 0);
 
-INSERT INTO `personagens` (`id_personagem`, `id_usuario`, `id_classe`, `id_presente`, `nome_personagem`, `vitalidade`, `vida`, `energia`, `forca`, `destreza`, `inteligencia`, `fe`, `sorte`, `data_criacao`, `mortes`, `caminho`) VALUES
-(2, 1, 5, 2, 'Vendetta', 30, 300, 50, 50, 35, 10, 30, 40, '2025-06-07 21:50:12', 0, 'havel.jpg'),
-(3, 1, 4, 2, 'Cabriolet', 36, 360, 23, 42, 24, 7, 14, 20, '2025-06-07 21:50:30', 0, 'golem.jpg'),
-(6, 1, 3, 0, 'Seath', 50, 500, 21, 42, 15, 31, 9, 10, '2025-06-07 21:53:39', 0, 'dragon.jpg'),
-(7, 1, 2, 5, 'Legolas', 32, 320, 22, 16, 24, 19, 9, 10, '2025-06-07 21:54:05', 0, 'male_elven.jpg'),
-(8, 2, 2, 3, 'Lady Maria', 32, 320, 22, 16, 24, 19, 9, 10, '2025-06-09 19:15:32', 0, 'male_elven.jpg'),
-(9, 2, 1, 0, 'crazy frog', 15, 150, 18, 22, 16, 25, 33, 17, '2025-06-11 16:44:01', 0, 'male_human.jpg'),
-(10, 2, 3, 5, 'Tchola', 50, 500, 21, 42, 15, 31, 9, 10, '2025-06-11 17:18:14', 0, 'dragon.jpg'),
-(11, 2, 4, 3, '3sda', 36, 360, 23, 42, 24, 7, 14, 20, '2025-06-11 17:19:05', 0, 'golem.jpg');
-
 INSERT INTO `presentes` (`id_presente`, `nome_presente`, `descricao`, `qtd_inicial`) VALUES
 (0, 'Nenhum', 'Nada.', 0),
 (1, 'Anel da Vida', 'Aumenta a vida máxima', 1),
