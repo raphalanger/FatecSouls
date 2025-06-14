@@ -1,0 +1,4 @@
+database/*
+
+!database/fatec_soulsStructure.sql
+!database/fatec_soulsData.sql

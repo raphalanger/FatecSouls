@@ -17,9 +17,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
 }
 .player p {
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Optimus Princeps';
 }
 .player-area {

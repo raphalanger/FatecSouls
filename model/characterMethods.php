@@ -101,8 +101,8 @@
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach($result as $row) {
                     echo '<form action="../view/hub.php" method="POST" class="charForm">
-                        <input  name="char" hidden value="'.$row['id_personagem'].'">
-                        <button class="majorChar">
+                        <input  name="char" id="charId" hidden value="'.$row['id_personagem'].'">
+                        <button class="majorChar" id="majorChar">
                             <div class="character-info">
                                 <p class="character-name">'.$row['nome_personagem'].'</p>
                                 <p class="class-name">'.$row['nome_classe'].'</p>
@@ -113,11 +113,21 @@
                                     <p>Nível: '.number_format($row['nivel'], 0).'</p>
                                     <p>Mortes: '.$row['mortes'].'</p>
                                 </div>
-                                <img class="miniDisplay" src="../assets/classes_images/'.$row['caminho'].'">
+                                <img class="miniDisplay" id="imageDisplay" src="../assets/classes_images/'.$row['caminho'].'">
                             </div>
                         </button>
                     </form>';
                 }
+            }
+        }
+
+        public function searchImg($id) {
+            $sql = "SELECT caminho FROM personagens WHERE id_personagem = :idChar";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":idChar", $id);
+            if ($stmt->execute()) {
+                $img = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $img['caminho'];
             }
         }
     }

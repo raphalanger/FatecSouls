@@ -60,10 +60,6 @@ INSERT INTO `presentes` (`id_presente`, `nome_presente`, `descricao`, `qtd_inici
 (4, 'Humanidade', 'Restaura a integridade física do usuário', 1),
 (5, 'Semente da Árvore Gigante', 'Uma semente muito velha, de uma árvore impossibili', 1);
 
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `senha`) VALUES
-(1, 'raphael', '1234'),
-(2, 'ludwig', '1234');
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

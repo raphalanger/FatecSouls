@@ -1,4 +1,9 @@
 <?php
+    include_once '../model/connect.php';
+    $connection = new Connect();
+    $conn = $connection->getConn();
+    include_once '../model/characterMethods.php';
+    $methods = new CharacterMethods($conn);
     session_start();
     if(!isset($_SESSION['authenticated']) && $_SESSION['authenticated'] !== true) {
         $_SESSION['error'] = null;
@@ -10,7 +15,9 @@
         $opc = $_POST['char'];
         $_SESSION['characterId'] = $opc;
         //echo '<h2>'.$opc.'</h2>'; // debug
+        $img = $methods->searchImg($opc);
     }
+
 ?>
 <!DOCTYPE html>
     <head>

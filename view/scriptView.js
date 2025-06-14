@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     console.log("script loaded");
+    
     const pwd_btn = document.getElementById('pwd_btn');
     const pwd = document.getElementById('pwd');
 
@@ -74,4 +75,3 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-

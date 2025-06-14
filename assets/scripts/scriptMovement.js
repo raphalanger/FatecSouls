@@ -2,6 +2,18 @@ window.addEventListener('DOMContentLoaded', function() {
     const player = document.getElementById('player');
     const parent = player.parentElement;
     
+    fetch('../model/getImage.php')
+    .then(response => response.json())
+    .then(data => {
+        if (data.imagem) {
+            player.style.backgroundImage = `url('${data.imagem}')`;
+        }
+
+    })
+    .catch(error => {
+        console.log("erro ao obter imagem: ",error);
+    });
+
     if (player && parent) {
         let pos = { x: 100, y: 100 };
         player.style.width = 100 + 'px';
