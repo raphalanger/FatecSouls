@@ -52,7 +52,14 @@
                         <div class="player" id="player">
                             <p>This is you.</p>
                         </div>
+                        <div class="player-actions" id="player-actions">
+                            <p>Atacar</p>
+                            <p>Item</p>
+                            <p>Insp.</p>
+                            <p>Fugir</p>
+                        </div>
                     </div>
+                    
                 </div>
                 <div class="oponent-status">
                     <!-- and last, but not least, this will be the division for oponent status -->
