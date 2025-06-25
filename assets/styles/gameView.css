@@ -150,6 +150,11 @@ main {
     justify-content: center;
     background-size: cover;
     background-position: center;
+    z-index: 1;
+}
+.player-image {
+    width: 75px;
+    height: 75px;
 }
 .player p {
     color: rgb(255, 255, 255);
@@ -163,19 +168,33 @@ main {
     padding: 0;
     margin: 0;
     display: flex;
+    
+    flex-direction: column;
 }
 .player-actions {
     width: 100%;
-    flex: 0 0 100px;
+    flex: 0 0 70px;
     display: flex;
     flex-direction: row;
+    position: relative;
     justify-content: space-between;
     align-items: center; /* Vertically center actions */
     background: #222;    /* Optional: background for clarity */
     color: #fff;
     font-family: 'Optimus Princeps';
     font-size: 1.2em;
-    padding: 0 10px;
+    padding-top: 2px;
+}
+.player-actions p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25%;
+    border: 1px solid white;
+}
+.player-actions p.active {
+    box-shadow: 0 0 15px 5px rgb(184, 104, 1) inset;
 }
 .header-label {
     width: 100%;
@@ -200,7 +219,7 @@ main {
     flex-direction: row;
 }
 .game-area {
-    height: 83.5%;
+    height: 100%;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -213,6 +232,26 @@ main {
     min-width: 0px;
     width: 25%;
     background-color: green;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    padding: 1px;
+}
+.player-status {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.player-status tr {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.player-status td {
+    margin: 2px;
 }
 .oponent-status {
     min-width: 0px;
@@ -264,5 +303,88 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.status-bars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+.lifebar-container {
+    width: 250px;
+    height: 20px;
+    background: #333;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgb(172, 85, 4);
+}
+.lifebar {
+    height: 100%;
+    background:  rgb(87, 1, 1);
+    width: 100%;
+}
+.stamina-container {
+    width: 250px;
+    height: 20px;
+    direction: rtl;
+    background: #333;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgb(172, 85, 4);
+}
+.stamina {
+    height: 100%;
+    background: #187006;
+    width: 100%;
+}
+/* ddv8569 */
+.dialog-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.dialog-box {
+    background: #222;
+    color: #fff;
+    padding: 24px 32px;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 90vw;
+    box-shadow: 0 0 20px #000;
+    position: relative;
+}
+.dialog-close {
+    position: absolute;
+    top: 8px; right: 12px;
+    font-size: 2em;
+    cursor: pointer;
+}
+.dialog-content {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.damager-tab {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.damager-scale {
+    width: 80%;
+    height: 70%;
+    background: radial-gradient(circle, green 0%, red 50%, green 100%);
 }

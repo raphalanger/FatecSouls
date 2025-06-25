@@ -81,6 +81,26 @@ INSERT INTO `escalas` (`id_escala`, `tipo_arma`, `escala_rank`, `tipo_dano`, `fo
 (12, 'Martelo Grande', 'E', 'dano_louc', 0, 0, 0, 0, 0);
 
 --
+-- Despejando dados para a tabela `presentes`
+--
+
+INSERT INTO `presentes` (`id_presente`, `nome_presente`, `descricao`, `qtd_inicial`) VALUES
+(0, 'Nenhum', 'Nada.', 0),
+(1, 'Anel da Vida', 'Aumenta a vida máxima', 1),
+(2, 'Bomba de Fogo', 'Explode ao impacto, causando dano de fogo', 3),
+(3, 'Osso do Regresso', 'Forte oração leva o usuário à segurança', 2),
+(4, 'Humanidade', 'Restaura a integridade física do usuário', 1),
+(5, 'Semente da Árvore Gigante', 'Uma semente muito velha, de uma árvore antiga', 1);
+
+--
+-- Despejando dados para a tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nome`, `senha`) VALUES
+(1, 'raphael', '1234'),
+(2, 'ludwig', '1234');
+
+--
 -- Despejando dados para a tabela `personagens`
 --
 
@@ -93,26 +113,6 @@ INSERT INTO `personagens` (`id_personagem`, `id_usuario`, `id_classe`, `id_prese
 (9, 2, 1, 0, 'crazy frog', 15, 150, 18, 22, 16, 25, 33, 17, '2025-06-11 16:44:01', 0, 'male_human.jpg'),
 (10, 2, 3, 5, 'Tchola', 50, 500, 21, 42, 15, 31, 9, 10, '2025-06-11 17:18:14', 0, 'dragon.jpg'),
 (11, 2, 4, 3, '3sda', 36, 360, 23, 42, 24, 7, 14, 20, '2025-06-11 17:19:05', 0, 'golem.jpg');
-
---
--- Despejando dados para a tabela `presentes`
---
-
-INSERT INTO `presentes` (`id_presente`, `nome_presente`, `descricao`, `qtd_inicial`) VALUES
-(0, 'Nenhum', 'Nada.', 0),
-(1, 'Anel da Vida', 'Aumenta a vida máxima', 1),
-(2, 'Bomba de Fogo', 'Explode ao impacto, causando dano de fogo', 3),
-(3, 'Osso do Regresso', 'Forte oração leva o usuário à segurança', 2),
-(4, 'Humanidade', 'Restaura a integridade física do usuário', 1),
-(5, 'Semente da Árvore Gigante', 'Uma semente muito velha, de uma árvore impossibili', 1);
-
---
--- Despejando dados para a tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `senha`) VALUES
-(1, 'raphael', '1234'),
-(2, 'ludwig', '1234');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
