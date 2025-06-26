@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="../assets/styles/gameView.css">
         <script src="../assets/scripts/upgradingMechanics.js"></script>
         <script src="../assets/scripts/scriptMovement.js"></script>
+        <script src="../assets/scripts/turnSwitch.js"></script>
         <title>FATEC SOULS</title>
         <link rel="icon" type="image/x-icon" href="../assets/backgrounds/darkmoon.ico">
     </head>
@@ -75,9 +76,9 @@
                             <div id="dialog-content" class="dialog-content"></div>
                         </div>
                     </div>
-                    <div id="damage-tab" style="display:none; width: 300px; height: 30px; background: #222; position: relative; margin: 20px auto;">
-                        <div id="damage-bar" style="width:100%; height:100%; background: radial-gradient(circle, green 0%, red 50%, green 100%);"></div>
-                        <div id="damage-pointer" style="position:absolute; top:0; left:0; width:4px; height:100%; background:white; transition:none;"></div>
+                    <div id="damage-tab" class="damage-tab">
+                        <div id="damage-bar" class="damage-bar"></div>
+                        <div id="damage-pointer" class="damage-pointer"></div>
                     </div>
                     <div class="player-area" id="player-area">
                         <div class="player" id="player">

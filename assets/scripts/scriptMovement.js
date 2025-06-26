@@ -66,13 +66,15 @@ window.addEventListener('DOMContentLoaded', function() {
                 if(e.key == 'Shift')
                     if(curStamina > 50)
                         staminaReplenish(true);
-            }
-        });
-
+                }
+            });
+            
         function confirmAction() {
             const action = document.querySelector('#player-actions p.active');
-            if(action)
+            if(action) {
                 action.click();
+                setClicked(true);
+            }
                 //action.dispatchEvent(new MouseEvent('click', {bubbles: true}));
             else
                 console.log("not an action element");
@@ -181,6 +183,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     break; // Only one can be active
                 } else {
                     action.classList.remove('active');
+                    setClicked(false);
                 }
             }
             requestAnimationFrame(updatePosition);

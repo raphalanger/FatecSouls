@@ -20,7 +20,7 @@
             $this->host = "localhost";
             $this->user = "root";
             $this->passwd = "";
-            $this->db = "fatec_souls";
+            $this->db = "fatecsouls";
         }
 
         public function connect() {

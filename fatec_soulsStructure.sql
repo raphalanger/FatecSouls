@@ -115,6 +115,31 @@ CREATE TABLE `escalas` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `presentes`
+--
+
+CREATE TABLE `presentes` (
+  `id_presente` int(2) NOT NULL,
+  `nome_presente` varchar(50) NOT NULL,
+  `descricao` varchar(50) NOT NULL,
+  `qtd_inicial` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `personagens`
 --
 
@@ -138,29 +163,6 @@ CREATE TABLE `personagens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `presentes`
---
-
-CREATE TABLE `presentes` (
-  `id_presente` int(2) NOT NULL,
-  `nome_presente` varchar(50) NOT NULL,
-  `descricao` varchar(50) NOT NULL,
-  `qtd_inicial` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `senha` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
