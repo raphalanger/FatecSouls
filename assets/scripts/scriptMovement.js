@@ -60,9 +60,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 if(e.key === ' ') {
                     confirmAction();
                 }
-                if(e.key == 'Escape') {
-                    cancelAction();
-                }
                 if(e.key == 'Shift')
                     if(curStamina > 50)
                         staminaReplenish(true);
@@ -78,13 +75,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 //action.dispatchEvent(new MouseEvent('click', {bubbles: true}));
             else
                 console.log("not an action element");
-        }
-        function cancelAction() {
-            const cancel = document.getElementById('dialog-close');
-            if(cancel)
-                cancel.click();
-            else
-                console.log("no actions opened");
         }
 
         document.addEventListener('keyup', function(e) {

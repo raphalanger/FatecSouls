@@ -36,7 +36,7 @@
     <body>
         <main>
             <header class="header-label">
-                <a href="../controller/logoutController.php" class="headerText">Sair</a>                    
+                <a href="../controller/logoutController.php" class="headerText" id="leave">Sair</a>                    
             </header>
             <div class="horizontal-display">
                 <!-- this will be the division for horizontal placing -->
@@ -62,7 +62,7 @@
                                 echo '<tr><td>Nome: </td<td>'.$value.'</td></tr>';
                                 continue;
                             }
-                            echo '<tr><td>'.$field.':</td><td>'.$value.'</td></tr>';
+                            echo '<tr><td>'.$field.':</td><td class="main-stat" data-stat="'.$field.'">'.$value.'</td></tr>';
                         }
                         echo '</table>';
                         $loads->loadClassWeapon($char['id_classe']);
@@ -74,6 +74,14 @@
                         <div class="dialog-box">
                             <span id="dialog-close" class="dialog-close" hidden>&times;</span>
                             <div id="dialog-content" class="dialog-content"></div>
+                        </div>
+                    </div>
+                    <div id="upgrade-overlay" class="upgrade-overlay">
+                        <div id="upgrade-box" class="upgrade-box">
+                            <p>Almas em posse: <span id="soul-balance" class="soul-balance">0</span>
+                            <p>Custo em Almas: <span id="soul-cost" class="soul-cost">0</span></p>
+                            <?php $methods->getLevels($_SESSION['characterId']) ?>
+                            <button id="set-upgrade" class="set-upgrade">Confirmar</button>
                         </div>
                     </div>
                     <div id="damage-tab" class="damage-tab">

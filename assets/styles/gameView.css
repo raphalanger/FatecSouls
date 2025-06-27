@@ -399,3 +399,25 @@ main {
     background:rgb(255, 255, 255);
     transition:none;
 }
+.upgrade-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.upgrade-box {
+    background: #222;
+    color: #fff;
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #000;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

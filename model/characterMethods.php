@@ -131,8 +131,7 @@
             }
         }
         public function getSpecificChar($id) {
-            $sql = "SELECT * FROM personagens WHERE id_personagem = :idChar";
-            $stmt = $this->conn->prepare($sql);
+            $sql = "SELECT id_personagem, id_usuario, id_classe, id_presente, nome_personagem AS 'Nome', vitalidade AS 'Vitalidade', vida AS 'Vida', energia AS 'Energia', forca AS 'Força', destreza AS 'Destreza', inteligencia AS 'Inteligência', fe AS 'Fé', sorte AS 'Sorte', data_criacao, mortes, caminho FROM personagens WHERE id_personagem = :idChar";            $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(":idChar", $id);
             if ($stmt->execute())
                 return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -153,6 +152,25 @@
                 return $stmt->fetch(PDO::FETCH_ASSOC);
             }
         }
-        
+        public function getLevels($id) {
+            $sql = "SELECT vitalidade as 'Vitalidade', energia as 'Energia', forca as 'Força', destreza as 'Destreza', inteligencia as 'Inteligência', fe as 'Fé', sorte as 'Sorte' FROM personagens WHERE id_personagem = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":id", $id);
+            if($stmt->execute()) {
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                echo '<table class="level-tab" id="level-tab">';
+                foreach($result as $row) { 
+                    foreach($row as $field => $value) {
+                        echo '<tr>
+                                <td><button id="stat-dec" data-stat="'.$field.'">-</button></td>
+                                <td>'.$field.'</td>
+                                <td id="stat-value" data-stat="'.$field.'">'.$value.'</td>
+                                <td><button id="stat-inc" data-stat="'.$field.'">+</button></td>
+                            </tr>';
+                    }
+                }
+                echo '</table>';
+            }
+        }
     }
 ?>
